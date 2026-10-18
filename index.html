@@ -6,6 +6,31 @@
   <title>John Andrei A. Muning | Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    // Block Right Click
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    // Block Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C', 'i', 'j', 'c'].includes(e.key)) ||
+        (e.ctrlKey && (e.key === 'u' || e.key === 'U'))
+      ) {
+        e.preventDefault();
+      }
+    });
+
+    // Freeze execution if DevTools is opened
+    setInterval(() => {
+      (function () {
+        function block() {
+          debugger;
+        }
+        block();
+      })();
+    }, 100);
+  </script>
 </head>
 <body>
 
