@@ -29,3 +29,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+document.addEventListener('keydown', (event) => {
+  // Prevent F12
+  if (event.key === 'F12') {
+    event.preventDefault();
+  }
+
+  // Prevent Ctrl+Shift+I, Ctrl+Shift+J, and Ctrl+Shift+C
+  if (event.ctrlKey && event.shiftKey && ['I', 'J', 'C', 'i', 'j', 'c'].includes(event.key)) {
+    event.preventDefault();
+  }
+
+  // Prevent Ctrl+U (View Source)
+  if (event.ctrlKey && (event.key === 'u' || event.key === 'U')) {
+    event.preventDefault();
+  }
+});
+setInterval(() => {
+  (function() {
+    function block() {
+      debugger;
+    }
+    block();
+  })();
+}, 100);
