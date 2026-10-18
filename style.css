@@ -151,6 +151,7 @@ body {
   display: flex;
   gap: 1rem;
 }
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -405,6 +406,24 @@ body {
     padding: 1rem;
   }
   .menu-btn { display: block; }
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-copy {
+    width: 100%;
+  }
+  .hero-sub {
+    max-width: 100%;
+  }
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-visual {
+    width: 100%;
+    flex-basis: auto;
+  }
   .hero h1 { font-size: 2rem; }
 }
 /* Certificate Card Image Styles */
